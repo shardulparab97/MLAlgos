@@ -46,10 +46,11 @@ for epoch in range(epochs):
         w = w - lr * grad_w
         b = b - lr * grad_b
 
+
     average_loss = loss/len(x)
 
     if epoch % 100 == 0:
-        print(f'Epoch {epoch}: Loss = {average_loss:.4f}')
+        print(f'Epoch {epoch}: Loss: {loss}, Avg. Loss = {average_loss:.4f}')
 
 # # run a prediction
 # y = np.array([0, 1, 1])

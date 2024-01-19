@@ -25,8 +25,8 @@ class LogisticRegression():
 
             self.weights = self.weights - self.lr*dw
             self.bias = self.bias - self.lr*db
-
-
+            loss = (1/(2*n_samples)) * np.sum((predictions-y)**2)
+            print(f"loss is: {loss}")
     def predict(self, X):
         linear_pred = np.dot(X, self.weights) + self.bias
         y_pred = sigmoid(linear_pred)
@@ -37,7 +37,6 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn import datasets
 import matplotlib.pyplot as plt
-from LogisticRegression import LogisticRegression
 
 bc = datasets.load_breast_cancer()
 X, y = bc.data, bc.target
